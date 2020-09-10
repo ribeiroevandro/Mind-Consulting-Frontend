@@ -12,15 +12,15 @@ import {
 } from 'react-native'
 import api from '../../services/api'
 
-export default function Ativar() {
+export default function UsersList() {
   const [people, setPeople] = useState([])
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const lista = JSON.parse(await AsyncStorage.getItem('@CodeApi:listar'))
       setPeople(lista)
     })()
-  })
+  }, [])
 
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => {}}>
